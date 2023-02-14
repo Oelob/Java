@@ -12,7 +12,7 @@ public class Program {
     public static void main(String[] args) {
         txtRead();
         setVar();
-        double answer = fastPow();
+        String answer = fastPow();
         txtWrite(answer);
     }
 
@@ -22,9 +22,9 @@ public class Program {
     private static String outputPath = "sem02_homework/output.txt";
     private static Map<String, String> dictionary = new HashMap<String, String>();
 
-    public static double fastPow() { //возводит value в степень exp
-        double result = 1;
+    public static String fastPow() { //возводит value в степень exp
         if (exp >= 0) {
+            long result = 1;
             while (exp > 0) {
                 if (exp % 2 == 1) {
                     result *= value;
@@ -32,8 +32,10 @@ public class Program {
                 value *= value;
                 exp /= 2;
             }
-            return result;
-        } else {
+            return String.valueOf(result);
+        } 
+        else {
+            double result = 1;
             exp = -exp;
             while (exp > 0) {
                 if (exp % 2 == 1) {
@@ -42,7 +44,7 @@ public class Program {
                 value *= value;
                 exp /= 2;
             }
-            return 1 / result;
+            return String.valueOf(1 / result);
         }
     }
 
@@ -60,11 +62,11 @@ public class Program {
         }
     }
 
-    static void txtWrite(double answer) { // записывает ответ в файл output.txt
+    static void txtWrite(String answer) { // записывает ответ в файл output.txt
         File file = new File(outputPath);
         try {
             PrintWriter pw = new PrintWriter(file);
-            pw.printf("%.3f", answer);
+            pw.println(answer);
             pw.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
