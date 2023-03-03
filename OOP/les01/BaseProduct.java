@@ -1,6 +1,6 @@
 package OOP.les01;
 
-import sem01_homework.program;
+
 
 public class BaseProduct {
     private String name;
@@ -15,12 +15,34 @@ public class BaseProduct {
         this.unitMeasure = unitMeaString;
     }
 
-    public String getInfo(){
+    
+    public String toString(){
         return String.format("Name: %s Price: %.2f Count: %d UnitMeasure: %s",
         this.name, this.price, this.count, this.unitMeasure);
     }
 
-    public String toString(){
-        return getInfo();
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    
+    public void setCount(int count){
+        this.count = count;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public double getPrice(){
+        return this.price;
+    }
+
+    public int getCount(){
+        return this.count;
+    }
+
+    public String getUnitMeasure(){
+        return this.unitMeasure;
     }
 }
