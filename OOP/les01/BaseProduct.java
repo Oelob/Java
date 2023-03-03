@@ -16,7 +16,7 @@ public class BaseProduct {
     }
 
     public String getInfo(){
-        return String.format("Name: %s Price %.2f Count %d UnitMeasure %s",
+        return String.format("Name: %s Price: %.2f Count: %d UnitMeasure: %s",
         this.name, this.price, this.count, this.unitMeasure);
     }
 
