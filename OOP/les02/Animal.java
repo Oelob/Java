@@ -27,8 +27,8 @@ public abstract class Animal {
         return this.voice;
     }
 
-    public void roar() {
-        System.out.println("Голос: " + this.voice);
+    public String roar() {
+        return String.format("Голос: %s", this.voice);
     }
 
     @Override

@@ -11,6 +11,10 @@ public class Cat extends Pet{
         }
         
     }
+    public Cat(){
+        super(20, 10, "orange", "mau", "murzik", "persian", true, "white", 2019, 06, 15);
+        this.isWool = true;
+    };
 
     @Override
     public void showCaress() {
@@ -25,5 +29,8 @@ public class Cat extends Pet{
         return result;
         
     }
+
+    
+
     
 }

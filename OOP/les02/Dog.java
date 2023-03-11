@@ -5,11 +5,14 @@ public class Dog extends Pet {
 
     protected boolean isTrained;
 
-    public Dog(int height, int weight, String eyeColor, String voice, String name, String breed, boolean isVaccinated,
+    public Dog(int height, int weight, String eyeColor, String name, String breed, boolean isVaccinated,
             String woolColor, int year, int month, int day, boolean isTrained) {
-        super(height, weight, eyeColor, voice, name, breed, isVaccinated, woolColor, year, month, day);
+        super(height, weight, eyeColor, "woof", name, breed, isVaccinated, woolColor, year, month, day);
         this.isTrained = isTrained;
     }
+     public Dog(){
+        super(25,10,"black","woof","tuzik","streetdog",true,"black",2019,07,10);
+     }
 
     @Override
     public void showCaress() {
