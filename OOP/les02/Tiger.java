@@ -4,5 +4,8 @@ public class Tiger extends Wild {
         super(height, weight, eyeColor, voice, areal, year, month, day);
         
     }
+    public Tiger(){
+        super(150,80,"yellow","rrrrr","India",2015,10,25);
+    }
     
 }
