@@ -10,12 +10,18 @@ public abstract class BaseFig {
 
     
     
-    public abstract double calcS();
+    public abstract double calcS() throws RadiusException, SideException;
 
 
     @Override
     public String toString(){
-        return String.format("Name: %s Площадь: %.2f",this.name, calcS());
+        try {
+            return String.format("Name: %s Площадь: %.2f",this.name, calcS());
+        } catch (RadiusException | SideException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return name;
     }
     public abstract void set();
 }

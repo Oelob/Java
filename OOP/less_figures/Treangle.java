@@ -24,7 +24,8 @@ public class Treangle extends Polygon{
 
 
     @Override
-    public double calcS() {
+    public double calcS() throws SideException {
+        if (a<=0|b<=0|c<=0) throw new SideException("Площад фигуры равна 0, фигуры не существует");
         double p = (a + b + c) / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }

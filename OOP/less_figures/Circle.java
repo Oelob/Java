@@ -11,17 +11,17 @@ public class Circle extends BaseFig implements Length{
         this.r = r;
     }
 
-    
-
     @Override
     public String toString() {
-    
         return String.format("%s Радиус: %.2f Длина окружности: %.2f", super.toString(), this.r, calcLength());
     }
 
     @Override
-    public double calcS() {
+    public double calcS() throws RadiusException{
+        if (r<=0) throw new RadiusException("Радиус не может быть равен 0");
         return Math.PI*r*r;
+       
+        
     }
 
     @Override
@@ -36,17 +36,8 @@ public class Circle extends BaseFig implements Length{
         this.r = num;
     }
 
-
-
     @Override
     public void set() {
         setR();
     }
-
-
-    
-   
-
-    
-    
 }
