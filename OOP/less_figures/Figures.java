@@ -3,6 +3,7 @@ package OOP.less_figures;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Figures {
 
@@ -28,11 +29,23 @@ public class Figures {
         this.figures.remove(index);
     }
 
-    public void getChanges(int index){
-        this.figures.get(index).getClass();
-
+    public void getChanges(){
+        System.out.println("Введите индекс фигуры, парамеры которой нужно поменять");
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        System.out.println("=============");
+        System.out.println(this.figures.get(num).toString());
+        System.out.println("=============");
+        this.figures.get(num).set();
+       
     }
 
+    public void changeFig(BaseFig obj){
+        System.out.println("Введите индекс фигуры, которую нужно заменить");
+        Scanner scan = new Scanner(System.in);
+        int indx = scan.nextInt();
+        this.figures.set(indx, obj);
+    }
 
 
 

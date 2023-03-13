@@ -14,11 +14,15 @@ public class Program {
         storage.addFig(new Circle("Circle", 5));
         storage.addFig(new Rectangle("Rectangle", 3, 4));
 
-        System.out.println(storage.getAllInfo());
-        storage.getChanges(2);
-        System.out.println(storage.getAllInfo());
 
+
+        System.out.println(storage.getAllInfo());
+        // storage.getChanges();
+        // System.out.println(storage.getAllInfo());
+        storage.changeFig(new Square("new sq", 10));
+        System.out.println(storage.getAllInfo());
         
+
 
         
 

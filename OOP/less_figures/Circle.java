@@ -1,5 +1,7 @@
 package OOP.less_figures;
 
+import java.util.Scanner;
+
 public class Circle extends BaseFig implements Length{
 
     private double r;
@@ -14,7 +16,7 @@ public class Circle extends BaseFig implements Length{
     @Override
     public String toString() {
     
-        return String.format("%s Длина окружности: %.2f", super.toString(), calcLength());
+        return String.format("%s Радиус: %.2f Длина окружности: %.2f", super.toString(), this.r, calcLength());
     }
 
     @Override
@@ -27,8 +29,18 @@ public class Circle extends BaseFig implements Length{
         return 2*Math.PI*r;
     }
 
-    public void setR(double r) {
-        this.r = r;
+    public void setR() {
+        System.out.println("Введите размер радиуса");
+        Scanner sc = new Scanner(System.in);
+        double num = sc.nextInt();
+        this.r = num;
+    }
+
+
+
+    @Override
+    public void set() {
+        setR();
     }
 
 

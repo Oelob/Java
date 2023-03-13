@@ -17,5 +17,5 @@ public abstract class BaseFig {
     public String toString(){
         return String.format("Name: %s Площадь: %.2f",this.name, calcS());
     }
-    
+    public abstract void set();
 }
