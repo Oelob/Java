@@ -47,6 +47,11 @@ public class Figures {
         this.figures.set(indx, obj);
     }
 
+    public void sort(){
+        this.figures.sort(new SquareComporator());
+    }
+
+    
 
 
 }

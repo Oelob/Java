@@ -15,7 +15,8 @@ public class Rectangle extends Polygon{
     
 
     @Override
-    public double calcS() {
+    public double calcS() throws SideException{
+        if (a<=0|b<=0) throw new SideException("Площадь фигуры равна 0, фигуры не существует");
         return a*b;
     }
 
