@@ -19,8 +19,11 @@ public class Program {
         System.out.println(storage.getAllInfo());
         // storage.getChanges();
         // System.out.println(storage.getAllInfo());
-        storage.changeFig(new Square("new sq", 10));
+        // storage.changeFig(new Square("new sq", 10));
+        // System.out.println(storage.getAllInfo());
+        storage.sort();
         System.out.println(storage.getAllInfo());
+       
         
 
 
