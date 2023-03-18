@@ -36,20 +36,19 @@ public class DynamicMass<T> {
     public void delElement(int index){
         
         T[] temp = (T[])new Object[this.array.length-1];
-        // this.array[index] = null;
-        // for (int i = 0; i < this.array.length; i++) {
-        //     if (this.array[i] != null){
-        //         for (T el : temp) {
-        //             if (el == null){
-        //                 el = this.array[i];
-        //                 return;
-        //             }
-        //         }
-        //     }     
-        // }
-        // this.array = temp;
         System.arraycopy(this.array, 0, temp, 0, index);
         System.arraycopy(this.array, index+1, temp, index, this.array.length-index-1);
         this.array = temp;
+    }
+
+    public void delAllElement(T arg){
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.array[i] == arg){
+                T[] temp = (T[])new Object[this.array.length-1];
+                System.arraycopy(this.array, 0, temp, 0, i);
+                System.arraycopy(this.array, i+1, temp, i, this.array.length-i-1);
+                this.array = temp;
+            }  
+        }
     }
 }
