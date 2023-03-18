@@ -6,8 +6,11 @@ public class program {
 
         DynamicMass<Integer> dm = new DynamicMass<Integer>(array);
         dm.print();
-        dm.addElement(5);
+        dm.addElement(7);
         dm.print();
+        dm.delElement(4);
+        dm.print();
+        
     }
     
 }
