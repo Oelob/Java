@@ -51,6 +51,7 @@ public class Figures {
         this.figures.sort(new SquareComporator());
     }
 
+   
     
 
 

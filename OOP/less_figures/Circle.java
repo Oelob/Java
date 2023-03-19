@@ -2,7 +2,9 @@ package OOP.less_figures;
 
 import java.util.Scanner;
 
-public class Circle extends BaseFig implements Length{
+import OOP.less04_homework.Comparator;
+
+public class Circle extends BaseFig implements Length, Comparator{
 
     private double r;
 
@@ -40,4 +42,12 @@ public class Circle extends BaseFig implements Length{
     public void set() {
         setR();
     }
+
+
+    @Override
+    public int compare(Circle a, Circle b) throws RadiusException {
+        return Double.compare(a.calcS(), b.calcS());
+    }
+
+  
 }
