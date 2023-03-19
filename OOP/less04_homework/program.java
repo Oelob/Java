@@ -33,7 +33,12 @@ public class program {
         // dm.print();
         // System.out.println(dm.maxElement());
         // System.out.println(dm.multElements());
-        
+        // System.out.println(dm.indexElement(3));
+        // System.out.println(dm.indexElement(5));
+        // System.out.println(dm.inArray(5));
+        // dm.bubbleSort();
+        dm.insertionSort();
+        dm.print();
         
     }
     

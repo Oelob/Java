@@ -110,7 +110,73 @@ public class DynamicMass<T extends Comparable<T>>{
         return mult;
     }
     
+    public int indexElement(T arg){
+        int index = -1;
 
+        for (int i = 0; i < array.length; i++) {
+            if (this.array[i].equals(arg)){
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public boolean inArray (T arg){
+        return indexElement(arg) != -1;
+    }
+
+    public void bubbleSort() {
+        for (int i = 0; i < this.length - 1; i++) {
+            for (int j = 0; j < this.length - i - 1; j++) {
+                if (((Comparable<T>) this.array[j]).compareTo(this.array[j + 1]) > 0) {
+                    T temp = this.array[j];
+                    this.array[j] = this.array[j + 1];
+                    this.array[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public void insertionSort() {
+        for (int i = 1; i < this.length; i++) {
+            T key = this.array[i];
+            int j = i - 1;
+            while (j >= 0 && ((Comparable<T>) this.array[j]).compareTo(key) > 0) {
+                this.array[j + 1] = this.array[j];
+                j--;
+            }
+            this.array[j + 1] = key;
+        }
+    }
+
+    public void selectionSort() {
+        for (int i = 0; i < this.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < this.length; j++) {
+                if (((Comparable<T>) this.array[j]).compareTo(this.array[minIndex]) < 0) {
+                    minIndex = j;
+                }
+            }
+            T temp = this.array[i];
+            this.array[i] = this.array[minIndex];
+            this.array[minIndex] = temp;
+        }
+    }
+
+    public T getElement(int index){
+        if (index < 0 || index >= this.length) throw new IndexOutOfBoundsException("Такого элемента нет");
+        return this.array[index]; 
+    }
+
+    public T setElement(int index, T element){
+        if (index < 0 || index >= this.length) throw new IndexOutOfBoundsException("Такого элемента нет");
+        return this.array[index] = element; 
+    }
+
+    public int getLength(){
+        return this.length;
+    }
   
 
     
