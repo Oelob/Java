@@ -1,19 +1,21 @@
 package OOP.less04_homework;
 
-public class DynamicMass<T> {
+public class DynamicMass<T extends Comparable<T>>{
     
     private T[]array;
+    private int length;
     
     public DynamicMass (){
         this.array = (T[]) new Object();
+        this.length = 0;
     };
 
     public DynamicMass (T[] mas){
-        this.array = (T[]) new Object[mas.length];
-        for (int i = 0, size = mas.length; i < size; i ++) {
-            this.array[i] = mas[i];
-        }
+        this.array = mas.clone();
+        this.length = mas.length;
     }
+
+    
 
     public void print(){
         StringBuilder sb = new StringBuilder("[");
@@ -51,4 +53,43 @@ public class DynamicMass<T> {
             }  
         }
     }
+
+    public T minElement(){
+        if (length == 0) {
+            return null;
+        }
+        T min = this.array[0];
+        for (int i = 1; i < array.length; i++) {
+            if ((((Comparable<T>) array[i]).compareTo(min))<0){
+                min = array[i];
+            };
+        }
+        return min;
+    }
+
+    public T maxElement(){
+        if (length == 0) {
+            return null;
+        }
+        T max = this.array[0];
+        for (int i = 1; i < array.length; i++) {
+            if ((((Comparable<T>) array[i]).compareTo(max))>0){
+                max = array[i];
+            };
+        }
+        return max;
+    }
+    // @Override
+    // public int compareTo(T o) {
+    //     return this.compareTo(o);
+    // }
+
+    
+  
+
+
+    
+    
+   
+    
 }
