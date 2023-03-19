@@ -1,4 +1,10 @@
 package OOP.less04_homework;
+import OOP.less_figures.BaseFig;
+import OOP.less_figures.Figures;
+import OOP.less_figures.Length;
+import OOP.less_figures.Polygon;
+import OOP.less_figures.Rectangle;
+import OOP.less_figures.Treangle;
 
 public class DynamicMass<T extends Comparable<T>>{
     
@@ -79,10 +85,33 @@ public class DynamicMass<T extends Comparable<T>>{
         }
         return max;
     }
-    // @Override
-    // public int compareTo(T o) {
-    //     return this.compareTo(o);
-    // }
+
+    public double sumElements() throws SumException{
+        
+        if (!(this.array[0] instanceof Number)) throw new SumException("Эти элементы нельзя сложить");
+        double sum = 0;
+        for (int i = 0; i < this.length; i++) {
+            if (this.array[i] instanceof Number) {
+                sum += ((Number) this.array[i]).doubleValue();
+            }
+        }
+        return sum;
+    }
+
+    public double multElements() throws SumException{
+        
+        if (!(this.array[0] instanceof Number)) throw new SumException("Эти элементы нельзя перемножить");
+        double mult = 1;
+        for (int i = 0; i < this.length; i++) {
+            if (this.array[i] instanceof Number) {
+                mult *= ((Number) this.array[i]).doubleValue();
+            }
+        }
+        return mult;
+    }
+    
+
+  
 
     
   
